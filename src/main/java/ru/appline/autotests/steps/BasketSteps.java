@@ -2,8 +2,14 @@ package ru.appline.autotests.steps;
 
 import cucumber.api.java.ru.Когда;
 import cucumber.api.java.ru.Тогда;
+import io.qameta.allure.Attachment;
 import ru.appline.autotests.pages.BasketPage;
-import ru.appline.autotests.pages.ResultPage;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import static ru.appline.autotests.utils.WriteReader.WriterReader.write;
 
 public class BasketSteps {
 
@@ -11,26 +17,33 @@ public class BasketSteps {
 
     @Когда("^проверено наличие товаров$")
     public void наличие() throws Exception {
-        basketPage.checkItems();
+        new BasketPage().checkItems();
     }
 
     @Когда("^проверено, что поле \"(.+)\" имеет \"(.+)\"$")
-    public void проверка(String field, String value) throws Exception {
-        basketPage.checkValue(field, value);
+    public void проверкаКоличестваТоваров(String field, String value) throws Exception {
+        new BasketPage().checkValue(field, value);
     }
 
     @Когда("^выполнено нажатие на кнопку \"(.+)\"$")
     public void удалениеТоваров(String name) throws Exception {
-        basketPage.removeItems(name);
+        new BasketPage().removeItems(name);
     }
 
     @Тогда("^проверено, что поле \"(.+)\" имеет значение \"(.+)\"$")
-    public void проверка2(String field, String value) throws Exception {
-        basketPage.checkValue(field, value);
+    public void проверкаПустойКорзины(String field, String value) throws Exception {
+        new BasketPage().checkValue(field, value);
     }
 
-    @Тогда("^выполнен переход в корзину$")
-    public void переходВКорзину() throws Exception {
-        new ResultPage().gotoBasket();
+    @Тогда("^Купленные товары$")
+    public void товары() throws Exception {
+        write();
+        getBytes("Products.txt");
     }
+
+    @Attachment
+    public static byte[] getBytes(String resourceName) throws IOException {
+        return Files.readAllBytes(Paths.get("src/main/resources", resourceName));
+    }
+
 }

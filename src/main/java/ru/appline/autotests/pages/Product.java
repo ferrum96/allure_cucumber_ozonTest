@@ -22,7 +22,7 @@ public class Product implements Serializable {
 
     @Override
     public String toString() {
-        return getName() + " " + getPrice();
+        return getName() + " , " + getPrice();
     }
 
 }

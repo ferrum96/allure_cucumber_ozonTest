@@ -53,12 +53,13 @@ public abstract class BasePage {
     }
 
     public void fillField(WebElement field, String value) {
-        waitVisibilityOfElement(field);
         waitClickableOfElement(field);
         Actions actions = new Actions(getDriver());
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        scrollToElement(field);
         actions.moveToElement(field).click().build().perform();
-        js.executeScript("arguments[0].value='';", field);
+        field.sendKeys(Keys.CONTROL + "a");
+        field.sendKeys(Keys.DELETE);
         field.sendKeys(value);
         field.sendKeys(Keys.ENTER);
     }

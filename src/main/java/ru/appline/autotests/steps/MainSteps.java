@@ -1,7 +1,7 @@
 package ru.appline.autotests.steps;
 
-import ru.appline.autotests.pages.MainPage;
 import cucumber.api.java.ru.Когда;
+import ru.appline.autotests.pages.MainPage;
 
 public class MainSteps {
 
