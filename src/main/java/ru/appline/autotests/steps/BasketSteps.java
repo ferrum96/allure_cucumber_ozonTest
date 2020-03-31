@@ -33,16 +33,4 @@ public class BasketSteps {
     public void проверкаПустойКорзины(String field, String value) throws Exception {
         new BasketPage().checkValue(field, value);
     }
-
-    @Тогда("^Купленные товары$")
-    public void товары() throws Exception {
-        write();
-        getBytes("Products.txt");
-    }
-
-    @Attachment
-    public static byte[] getBytes(String resourceName) throws IOException {
-        return Files.readAllBytes(Paths.get("src/main/resources", resourceName));
-    }
-
 }
