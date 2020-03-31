@@ -6,3 +6,9 @@
 Смартфон Apple iPhone XR 64GB, синий , 50 490 ₽
 Смартфон Apple iPhone XR 64GB, желтый , 50 490 ₽
 Смартфон Apple iPhone XR 128GB, синий , 56 490 ₽
+
+
+Самый дорогой товвар
+
+
+Optional[Смартфон Apple iPhone XR 128GB, черный , 56 490 ₽]

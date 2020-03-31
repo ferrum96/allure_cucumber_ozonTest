@@ -4,7 +4,6 @@ import cucumber.api.java.ru.Когда;
 import cucumber.api.java.ru.Тогда;
 import io.qameta.allure.Attachment;
 import ru.appline.autotests.pages.BasketPage;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;

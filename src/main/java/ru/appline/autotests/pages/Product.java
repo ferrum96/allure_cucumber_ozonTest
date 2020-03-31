@@ -20,6 +20,10 @@ public class Product implements Serializable {
         return price;
     }
 
+    public int getIntPrice() {
+        return Integer.parseInt(price.replaceAll("[^0-9]", ""));
+    }
+
     @Override
     public String toString() {
         return getName() + " , " + getPrice();
