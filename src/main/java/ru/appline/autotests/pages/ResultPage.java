@@ -33,7 +33,7 @@ public class ResultPage extends BasePage {
     @FieldName(name = "NFC")
     public WebElement NFC;
 
-    @FindBy(xpath = "//div[@data-widget='searchResultsFiltersActive']/div/button/div/span")
+    @FindBy(xpath = "//div[@data-widget='searchResultsSort']//button")
     List<WebElement> filters;
 
     @FindBy(xpath = "//div[contains(@class,'widget-search-result-container')]/div/div/div/div")
