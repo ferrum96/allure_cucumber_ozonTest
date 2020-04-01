@@ -81,16 +81,13 @@ public class ResultPage extends BasePage {
 
         try {
             scrollToElement(items.get(i).findElement(By.xpath("./div/div/a")));
-            products.add(new Product(items.get(i).findElement(By.xpath("./div/div/a")).getText(), items.get(i).findElement(By.xpath("./div/a/div/span")).getText()));
             jsClick(items.get(i).findElement(By.xpath(".//div/button//div[text() = 'В корзину']")));
+            products.add(new Product(items.get(i).findElement(By.xpath("./div/div/a")).getText(), items.get(i).findElement(By.xpath("./div/a/div/span")).getText()));
         } catch (NoSuchElementException e) {
-            if (items.get(i).findElement(By.xpath(".//div[text() = 'Похожие']")).isDisplayed()) gotoBasket();
-            else {
                 i += 2;
                 scrollToElement(items.get(i).findElement(By.xpath("./div/div/a")));
-                products.add(new Product(items.get(i).findElement(By.xpath("./div/div/a")).getText(), items.get(i).findElement(By.xpath("./div/a/div/span")).getText()));
                 jsClick(items.get(i).findElement(By.xpath(".//div/button//div[text() = 'В корзину']")));
-            }
+                products.add(new Product(items.get(i).findElement(By.xpath("./div/div/a")).getText(), items.get(i).findElement(By.xpath("./div/a/div/span")).getText()));
         }
         return i;
     }
