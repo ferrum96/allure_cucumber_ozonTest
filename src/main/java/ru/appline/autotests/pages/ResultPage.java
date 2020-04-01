@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import ru.appline.autotests.annotation.FieldName;
 import java.util.List;
 
+import static ru.appline.autotests.pages.Product.products;
+
 public class ResultPage extends BasePage {
 
     @FindBy(xpath = "//div[contains(text(),'Бренды')]/..//span[contains(text(),'Посмотреть все')]")
@@ -43,13 +45,12 @@ public class ResultPage extends BasePage {
         waitClickableOfElement(items.get(0).findElement(By.xpath(".//div/button//div[text() = 'В корзину']")));
         switch (chetnost) {
             case "четных":
-                for (int i = 1; i < 2 * Integer.parseInt(count); i += 2) {
+                for (int i = 1; i <= 2 * Integer.parseInt(count); i += 2) {
                     getItem(i);
                 }
                 break;
             case "нечетных":
                 for (int i = 0; i < 2 * Integer.parseInt(count); i += 2) {
-                    i += 2;
                     getItem(i);
                 }
                 break;
@@ -62,13 +63,12 @@ public class ResultPage extends BasePage {
         waitClickableOfElement(items.get(0).findElement(By.xpath(".//div/button//div[text() = 'В корзину']")));
         switch (chetnost) {
             case "четные":
-                for (int i = 1; i <= items.size(); i += 2) {
+                for (int i = 1; i <= 2 * items.size(); i += 2) {
                     getItem(i);
                 }
                 break;
             case "нечетные":
-                for (int i = 0; i < items.size(); i += 2) {
-                    i += 2;
+                for (int i = 0; i < 2 * items.size(); i += 2) {
                     getItem(i);
                 }
                 break;
@@ -84,10 +84,16 @@ public class ResultPage extends BasePage {
             jsClick(items.get(i).findElement(By.xpath(".//div/button//div[text() = 'В корзину']")));
             products.add(new Product(items.get(i).findElement(By.xpath("./div/div/a")).getText(), items.get(i).findElement(By.xpath("./div/a/div/span")).getText()));
         } catch (NoSuchElementException e) {
+            if (items.get(i).findElements(By.xpath("./div/div/span/b")).size() > 0) {
                 i += 2;
                 scrollToElement(items.get(i).findElement(By.xpath("./div/div/a")));
                 jsClick(items.get(i).findElement(By.xpath(".//div/button//div[text() = 'В корзину']")));
                 products.add(new Product(items.get(i).findElement(By.xpath("./div/div/a")).getText(), items.get(i).findElement(By.xpath("./div/a/div/span")).getText()));
+            } else if (items.get(i).findElements(By.xpath(".//div/button//div[text() = 'Похожие']")).size() > 0) {
+                i += 2;
+                if (items.get(i).findElements(By.xpath(".//div/button//div[text() = 'Похожие']")).size() > 0)
+                    gotoBasket();
+            }
         }
         return i;
     }

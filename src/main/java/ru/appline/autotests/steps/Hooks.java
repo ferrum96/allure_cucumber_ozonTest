@@ -8,7 +8,7 @@ public class Hooks {
 
     @Before
     public static void before() {
-        DriverManager.getDriver();
+        DriverManager.initDriver();
     }
 
     @After

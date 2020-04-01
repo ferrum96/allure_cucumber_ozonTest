@@ -2,13 +2,9 @@ package ru.appline.autotests.steps;
 
 import cucumber.api.java.ru.Когда;
 import cucumber.api.java.ru.Тогда;
-import io.qameta.allure.Attachment;
 import ru.appline.autotests.pages.BasketPage;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 
-import static ru.appline.autotests.utils.WriteReader.WriterReader.write;
+import static ru.appline.autotests.pages.Product.removeProducts;
 
 public class BasketSteps {
 
@@ -22,6 +18,7 @@ public class BasketSteps {
     @Когда("^проверено, что поле \"(.+)\" имеет \"(.+)\"$")
     public void проверкаКоличестваТоваров(String field, String value) throws Exception {
         new BasketPage().checkValue(field, value);
+        removeProducts();
     }
 
     @Когда("^выполнено нажатие на кнопку \"(.+)\"$")

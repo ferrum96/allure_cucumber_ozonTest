@@ -29,6 +29,7 @@ public class ResultSteps extends ResultPage {
         new ResultPage().jsClick(showAll);
         new ResultPage().jsClick(name1);
         new ResultPage().jsClick(name2);
+        Thread.sleep(4000);
     }
 
     @Когда("^в корзину добавлено \"(.+)\" \"(.+)\" товаров$")
@@ -36,7 +37,7 @@ public class ResultSteps extends ResultPage {
         new ResultPage().addCart(count, chetnost);
     }
 
-    @Когда("^в корзину добавлены все \"(.+)\" товары$")
+    @Когда("^в корзину добавлены все \"(.+)\" товары и выполнен переход в корзину$")
     public void добавитьВКорзину2(String chetnost) throws Exception {
         new ResultPage().addCart(chetnost);
     }

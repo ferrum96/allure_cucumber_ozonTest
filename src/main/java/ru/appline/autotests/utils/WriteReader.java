@@ -1,12 +1,15 @@
 package ru.appline.autotests.utils;
 
 import ru.appline.autotests.pages.Product;
-import java.io.*;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
-import static ru.appline.autotests.pages.BasePage.products;
+
+import static ru.appline.autotests.pages.Product.products;
 
 public class WriteReader {
 
@@ -25,7 +28,7 @@ public class WriteReader {
                 for (Product product : products)
                     lines.add(product.toString());
                 lines.add("\n");
-                lines.add("Самый дорогой товвар");
+                lines.add("Товар с максимальной ценой:");
                 lines.add("\n");
                 lines.add(maxItem.toString());
                 final String LINE_SEPARATOR = System.getProperty("line.separator");

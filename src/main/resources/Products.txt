@@ -1,14 +1,15 @@
-Смартфон Apple iPhone 7 32GB, черный , 26 591 ₽
-Смартфон Apple iPhone XR 64GB, черный , 50 490 ₽
-Смартфон Apple iPhone XR 64GB, желтый , 50 490 ₽
-Смартфон Apple iPhone XR 128GB, черный , 56 490 ₽
-Смартфон Apple iPhone 7 32GB, золотой , 33 490 ₽
-Смартфон Apple iPhone XR 128GB, красный , 56 490 ₽
-Смартфон Apple iPhone XR 64GB, белый , 50 490 ₽
-Смартфон Apple iPhone 8 Plus 3/64GB, серебристый , 46 490 ₽
+Беспроводная BT-гарнитура Powerbeats 3 , 9 950 ₽
+Беспроводные наушники Samsung U Flex, черный , 3 649 ₽
+Samsung EO-BG920 Level U, Blue Bluetooth-гарнитура Уцененный товар (№7) , 2 840 ₽
+Беспроводные наушники Beats X, черный , 7 535 ₽
+Беспроводные наушники Samsung LEVEL U, синяя коробка , 2 679 ₽
+Bluetooth-гарнитура Samsung EO-MG920, черный , 1 360 ₽
+Беспроводные наушники Samsung Galaxy Buds, желтый , 9 348 ₽
+Bluetooth-гарнитура Samsung EO-MG900, белый , 2 407 ₽
+Беспроводная BT-гарнитура Powerbeats 3 , 9 950 ₽
 
 
-Самый дорогой товвар
+Товар с максимальной ценой:
 
 
-Optional[Смартфон Apple iPhone XR 128GB, черный , 56 490 ₽]
+Optional[Беспроводная BT-гарнитура Powerbeats 3 , 9 950 ₽]

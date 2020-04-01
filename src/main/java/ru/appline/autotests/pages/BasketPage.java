@@ -1,12 +1,13 @@
 package ru.appline.autotests.pages;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ru.appline.autotests.annotation.FieldName;
 import java.util.List;
+
 import static org.junit.Assert.assertTrue;
+import static ru.appline.autotests.pages.Product.products;
 
 public class BasketPage extends BasePage {
 
@@ -32,9 +33,9 @@ public class BasketPage extends BasePage {
     public void checkItems() {
         boolean isEquals;
         for (int i = 0; i < products.size(); i++) {
-            isEquals = products.get(i).getName().equals(boughtItems.get(products.size() - (i + 1)).findElement(By.xpath("./div/a/span")).getText());
+            isEquals = products.size() == boughtItems.size();
             if (!isEquals) {
-                assertTrue(String.format("Товар [%s] не находится в корзине вместо него [%s]", products.get(i).getName(), boughtItems.get(products.size() - (i + 1)).findElement(By.xpath("./div/a/span")).getText()), isEquals);
+                assertTrue(String.format("Товаров в корзине [%s], должно быть [%s]", products.size(), boughtItems.size()), false);
             }
         }
     }

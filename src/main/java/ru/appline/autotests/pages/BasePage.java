@@ -12,14 +12,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ru.appline.autotests.annotation.FieldName;
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
 import static ru.appline.autotests.utils.DriverManager.getDriver;
 
 public abstract class BasePage {
 
-    public static List<Product> products = new ArrayList<>();
     public static WebDriverWait wait = new WebDriverWait(getDriver(), 10);
 
     @FindBy(xpath = "//a[@data-widget=\"cart\"]")
