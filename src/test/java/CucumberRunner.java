@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = { "src/test/resources/features" },
         glue = {"ru.appline.autotests.steps"},
-        tags = {"@scenario1 , @scenario2"}
+        tags = {"@scenario1"}
 
 )
 public class CucumberRunner {
