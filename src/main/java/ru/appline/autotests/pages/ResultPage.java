@@ -93,6 +93,11 @@ public class ResultPage extends BasePage {
                 i += 2;
                 if (items.get(i).findElements(By.xpath(".//div/button//div[text() = 'Похожие']")).size() > 0)
                     gotoBasket();
+                else {
+                    scrollToElement(items.get(i).findElement(By.xpath("./div/div/a")));
+                    jsClick(items.get(i).findElement(By.xpath(".//div/button//div[text() = 'В корзину']")));
+                    products.add(new Product(items.get(i).findElement(By.xpath("./div/div/a")).getText(), items.get(i).findElement(By.xpath("./div/a/div/span")).getText()));
+                }
             }
         }
         return i;

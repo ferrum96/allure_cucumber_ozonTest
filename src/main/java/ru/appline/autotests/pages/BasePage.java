@@ -14,6 +14,7 @@ import ru.appline.autotests.annotation.FieldName;
 import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import static ru.appline.autotests.utils.DriverManager.getDriver;
 
@@ -28,7 +29,6 @@ public abstract class BasePage {
     public BasePage() {
         PageFactory.initElements(getDriver(), this);
     }
-
 
     public void jsClick(WebElement element) {
         Actions actions = new Actions(getDriver());
@@ -54,7 +54,6 @@ public abstract class BasePage {
     public void fillField(WebElement field, String value) {
         waitClickableOfElement(field);
         Actions actions = new Actions(getDriver());
-        JavascriptExecutor js = (JavascriptExecutor) getDriver();
         scrollToElement(field);
         actions.moveToElement(field).click().build().perform();
         field.sendKeys(Keys.CONTROL + "a");
@@ -80,7 +79,7 @@ public abstract class BasePage {
 
     public WebElement getField(String name, String className) throws Exception {
         Class aClass = Class.forName(className);
-        List<Field> fields = Arrays.asList(aClass.getFields());
+        List<Field> fields = Arrays.asList(aClass.getDeclaredFields());
         for (Field field : fields) {
             if (field.getAnnotation(FieldName.class).name().equalsIgnoreCase(name)) {
                 return getDriver().findElement(By.xpath(field.getAnnotation(FindBy.class).xpath()));
@@ -98,13 +97,10 @@ public abstract class BasePage {
     }
 
     public static WebElement waitVisibilityOfElement(WebElement element) {
-        wait = new WebDriverWait(getDriver(), 100);
         return wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     public static WebElement waitClickableOfElement(WebElement element) {
-        wait = new WebDriverWait(getDriver(), 10);
         return wait.until(ExpectedConditions.elementToBeClickable(element));
     }
-
 }
