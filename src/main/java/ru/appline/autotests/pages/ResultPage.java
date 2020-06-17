@@ -15,7 +15,7 @@ public class ResultPage extends BasePage {
     @FieldName(name = "Посмотреть все")
     public static WebElement showAll;
 
-    @FindBy(xpath = "//div[contains(text(),'Цена')]/following-sibling::div//input[contains(@id,'to')]")
+    @FindBy(xpath = "//div[contains(text(),'Цена')]/following-sibling::div//input[contains(@qa-id,'to')]")
     @FieldName(name = "максимальная цена")
     public WebElement maxValue;
 
