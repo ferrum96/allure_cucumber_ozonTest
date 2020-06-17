@@ -19,10 +19,10 @@ public class BasketPage extends BasePage {
     public WebElement countItems;
 
     @FindBy(xpath = "//div[@delete_button_name=\"Удалить выбранные\"]/span")
-    @FieldName(name = "удалить выбранные")
+    @FieldName(name = "Удалить выбранные")
     public WebElement removeItems;
 
-    @FindBy(xpath = "//div[text() = 'Удалить']")
+    @FindBy(xpath = "//div[contains(text(),'Удалить')]")
     @FieldName(name = "удалить")
     public WebElement remove;
 
@@ -50,6 +50,7 @@ public class BasketPage extends BasePage {
     }
 
     public void removeItems(String name) throws Exception {
+        Thread.sleep(15500);
         jsClick(name);
         jsClick(remove);
     }
