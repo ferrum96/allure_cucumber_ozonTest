@@ -1,14 +1,14 @@
-Смартфон Apple iPhone 7 2/32GB, черный , 26 480 ₽
-Смартфон Apple iPhone XR 64GB, черный , 49 990 ₽
-Смартфон Apple iPhone 11 128GB, фиолетовый , 63 480 ₽
-Смартфон Apple iPhone XR 64GB, красный , 49 990 ₽
-Смартфон Apple iPhone 11 64GB, зеленый , 57 980 ₽
+Смартфон Apple iPhone XR 64GB, черный , 47 980 ₽
+Смартфон Apple iPhone 11 64GB, черный , 57 480 ₽
+Смартфон Apple iPhone XR 64GB, красный , 46 726 ₽
+Смартфон Apple iPhone XR 64GB, белый , 46 726 ₽
+Смартфон Apple iPhone 11 64GB, зеленый , 57 480 ₽
 Смартфон Apple iPhone 7 2/32GB, серебристый , 26 480 ₽
-Смартфон Apple iPhone SE (2020) 64GB, белый , 39 480 ₽
-Смартфон Apple iPhone 7 2/32GB, розовое золото , 26 480 ₽
+Смартфон Apple iPhone 7 2/32GB, розовое золото , 26 263 ₽
+Смартфон Apple iPhone SE (2020) 128GB, красный , 44 990 ₽
 
 
 Товар с максимальной ценой:
 
 
-Optional[Смартфон Apple iPhone 11 128GB, фиолетовый , 63 480 ₽]
+Optional[Смартфон Apple iPhone 11 64GB, черный , 57 480 ₽]
